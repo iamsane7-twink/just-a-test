@@ -1,3 +1,13 @@
+**Quick Start** 
+
+> ```plaintext
+> mvn package -DskipTests
+> ```
+
+> ```plaintext
+> docker-compose up
+> ```
+
 **Server —** processes HTTP requests,  publishes events to message queue, and awaits replies before sending final responses.
 
 **Server Endpoints:**

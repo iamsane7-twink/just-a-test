@@ -42,7 +42,7 @@ public class CustomConsumerRecordRecoverer implements ConsumerRecordRecoverer {
 
         ProducerRecord<String, String> producerRecord = new ProducerRecord<>(topic, key, payload);
 
-        producerRecord.headers().add(REPLY_STATUS, errorReply.getStatus().getBytes());
+        producerRecord.headers().add("REPLY_STATUS", errorReply.getStatus().getBytes());
         producerRecord.headers().add(KafkaHeaders.CORRELATION_ID, correlationId);
 
         template.send(producerRecord);
