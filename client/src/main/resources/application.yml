@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: client
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+server:
+  port: 8081
+
+corePoolSize: ${THREAD_POOL_CORE_POOL_SIZE:30}
+maxPoolSize: ${THREAD_POOL_MAX_POOL_SIZE:100}
+queueCapacity: ${THREAD_POOL_QUEUE_CAPACITY:200}
+
+kafkaTopicPartitions: ${KAFKA_TOPIC_PARTITIONS:10}
+kafkaTopicReplication: ${KAFKA_TOPIC_REPLICATION:1}
+kafkaListenerContainerConcurrency: ${KAFKA_LISTENER_CONTAINER_CONCURRENCY:10}

@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: server
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+server:
+  port: 8080
+  
+kafkaTopicPartitions: ${KAFKA_TOPIC_PARTITIONS:10}
+kafkaTopicReplication: ${KAFKA_TOPIC_REPLICATION:1}
